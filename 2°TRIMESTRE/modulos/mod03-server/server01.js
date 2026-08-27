@@ -4,7 +4,7 @@ const fs = require('node:fs')
 const path = require('node:path')
 const porta = 8001
 
-
+//REVISÃO
 const home = path.join(__dirname, '/pages/index.html')
 const compras = path.join(__dirname, '/pages/compras.html')
 const erro = path.join(__dirname, '/pages/erro.html')
