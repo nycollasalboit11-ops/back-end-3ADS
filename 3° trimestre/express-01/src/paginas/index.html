@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confeitaria Premium | Doces Artesanais</title>
+    <!-- Fontes do Google: Playfair Display para títulos e Inter para textos de apoio -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Ícones minimalistas com traços finos -->
+    <script src="https://unpkg.com"></script>
+    <link rel="stylesheet" href="../../estilo/index.css">
+</head>
+<body>
+
+    <!-- Cabeçalho / Navegação -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="/">Confeitaria<span>Premium</span></a>
+        </div>
+        <nav class="nav-links">
+            <a href="/sobre">Sobre</a>
+            <a href="/produtos">Produtos</a>
+            <a href="/serviços">Serviços</a>
+        </nav>
+        <div class="nav-actions">
+            <button aria-label="Buscar"><i data-lucide="search"></i></button>
+            <button aria-label="Localização"><i data-lucide="map-pin"></i></button>
+            <button aria-label="Sacola de Compras" class="cart-btn">
+                <i data-lucide="shopping-bag"></i>
+            </button>
+            <a href="/produtos" class="btn-urgent-nav">Peça Agora</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section: Limited Drops -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="badge">Edição Limitada Sazonal</span>
+                <h1>Coleção de Primavera: Sabores que Florescem</h1>
+                <p>Doces artesanais finos desenvolvidos com o mais puro chocolate belga e texturas inesquecíveis. Garanta sua caixa exclusiva antes que acabe.</p>
+                <div class="hero-actions">
+                    <a href="/produtos" class="btn-primary">Compre antes que acabe</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Imagem representativa em alta definição exibindo a textura real do doce -->
+                <img src="https://unsplash.com" alt="Bolo gourmet artesanal com cobertura premium de primavera">
+            </div>
+        </section>
+
+        <!-- Social Proof Seção -->
+        <section class="social-proof">
+            <div class="proof-container">
+                <div class="stars">
+                    <i data-lucide="star" class="star-icon"></i>
+                    <i data-lucide="star" class="star-icon"></i>
+                    <i data-lucide="star" class="star-icon"></i>
+                    <i data-lucide="star" class="star-icon"></i>
+                    <i data-lucide="star" class="star-icon"></i>
+                </div>
+                <p class="testimonial">"A melhor experiência em confeitaria que já tive! Os doces têm o equilíbrio perfeito de açúcar e a textura é inexplicável."</p>
+                <span class="author">— Mariana S., Avaliação de Cliente</span>
+            </div>
+        </section>
+
+        <!-- Grid de Mais Vendidos -->
+        <section class="products-grid-section">
+            <div class="section-header">
+                <h2>Os Mais Desejados</h2>
+                <p>Nossos campeões de vendas exibidos em sua forma mais pura.</p>
+            </div>
+            
+            <div class="grid-container">
+                <!-- Produto 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://unsplash.com" alt="Rosca Gourmet com recheio cremoso">
+                    </div>
+                    <div class="product-info">
+                        <h3>Donut Supremo de Pistache</h3>
+                        <p>Massa leve e aerada com recheio fluido de pistache artesanal e cobertura crocante.</p>
+                        <div class="product-footer">
+                            <span class="price">R$ 18,00</span>
+                            <a href="/produtos" class="btn-card-action">Adicionar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://unsplash.com" alt="Macarons finos franceses">
+                    </div>
+                    <div class="product-info">
+                        <h3>Box Macarons d'Amour</h3>
+                        <p>Seleção clássica com 6 macarons franceses crocantes por fora e incrivelmente macios por dentro.</p>
+                        <div class="product-footer">
+                            <span class="price">R$ 45,00</span>
+                            <a href="/produtos" class="btn-card-action">Adicionar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://unsplash.com" alt="Croissant com chocolate belga">
+                    </div>
+                    <div class="product-info">
+                        <h3>Croissant Triplo Chocolate</h3>
+                        <p>Folhado artesanal dourado recheado e finalizado com blend de chocolates belgas.</p>
+                        <div class="product-footer">
+                            <span class="price">R$ 16,50</span>
+                            <a href="/produtos" class="btn-card-action">Adicionar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Inicialização dos Ícones Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

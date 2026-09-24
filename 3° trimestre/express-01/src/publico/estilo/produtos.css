@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Gateau de Pistache Premium | Confeitaria</title>
+    <!-- Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://tailwindcss.com"></script>
+    <!-- Google Fonts: Serifada para títulos (Playfair) e Sans-serif para textos (Inter) -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        .font-serif-premium { font-family: 'Playfair Display', serif; }
+        .font-sans-premium { font-family: 'Inter', sans-serif; }
+        /* Zoom dinâmico na imagem principal */
+        .zoom-container { overflow: hidden; }
+        .zoom-container img { transition: transform 0.3s ease; }
+        .zoom-container:hover img { transform: scale(1.15); }
+    </style>
+</head>
+<body class="bg-[#FAF9F6] text-[#2C2C2C] font-sans-premium antialiased">
+
+    <!-- Container Principal da PDP -->
+    <main class="max-w-7xl mx-auto px-4 py-8 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+        
+        <!-- COLUNA ESQUERDA: Experiência Visual e Sensorial (6 Colunas) -->
+        <section class="lg:col-span-7 space-y-6">
+            <!-- Galeria / Zoom de Alta Qualidade -->
+            <div class="zoom-container relative bg-white rounded-2xl border border-stone-100 shadow-sm aspect-square flex items-center justify-center cursor-zoom-in">
+                <img id="main-product-image" src="https://unsplash.com" alt="Bolo de chocolate premium cortado ao meio mostrando recheio cremoso" class="w-full h-full object-cover rounded-2xl">
+                <span class="absolute top-4 right-4 bg-white/80 backdrop-blur-md text-xs uppercase tracking-wider px-3 py-1 rounded-full font-medium text-stone-600">Passe o mouse para dar zoom</span>
+            </div>
+
+            <!-- Carrossel de Miniaturas Sensoriais (Visão externa, corte interno e escala real) -->
+            <div class="grid grid-cols-3 gap-4">
+                <button onclick="changeImage('https://unsplash.com')" class="border-2 border-amber-700/60 rounded-xl overflow-hidden aspect-square focus:outline-none thumbnail-btn">
+                    <img src="https://unsplash.com" alt="Visão Externa" class="w-full h-full object-cover">
+                </button>
+                <button onclick="changeImage('https://unsplash.com')" class="border-2 border-transparent rounded-xl overflow-hidden aspect-square focus:outline-none thumbnail-btn">
+                    <img src="https://unsplash.com" alt="Textura do Recheio Cortado" class="w-full h-full object-cover">
+                </button>
+                <button onclick="changeImage('https://unsplash.com')" class="border-2 border-transparent rounded-xl overflow-hidden aspect-square focus:outline-none thumbnail-btn">
+                    <img src="https://unsplash.com" alt="Produto em Escala Real na Mão" class="w-full h-full object-cover">
+                </button>
+            </div>
+
+            <!-- Seção de Alergênicos e Ingredientes Limpa (Accordion) -->
+            <div class="border-t border-stone-200 pt-6 space-y-4">
+                <div class="border border-stone-200 rounded-xl bg-white overflow-hidden">
+                    <button onclick="toggleAccordion('ingredients-accordion')" class="w-full flex justify-between items-center p-4 text-left font-medium text-stone-800 hover:bg-stone-50 transition">
+                        <span>Ingredientes Selecionados</span>
+                        <svg id="arrow-icon" class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="ingredients-accordion" class="hidden p-4 bg-stone-50/50 border-t border-stone-100 text-sm text-stone-600 space-y-2">
+                        <p>Chocolate belga 70% cacau, manteiga premium texturizada, ovos orgânicos, açúcar demerara, pedaços de pistache siciliano torrado e favas de baunilha natural de Madagascar.</p>
+                        <p class="text-amber-800 font-medium">⚠️ ALÉRGICOS: Contém ovos, derivados de leite, pistache. Pode conter traços de trigo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLUNA DIREITA: Informações, Conversão e Up-Selling (5 Colunas) -->
+        <section class="lg:col-span-5 flex flex-col justify-between space-y-8">
+            
+            <!-- Cabeçalho do Produto -->
+            <div class="space-y-3">
+                <span class="text-xs uppercase tracking-widest text-amber-800 font-semibold">Edição Limitada Artesanal</span>
+                <h1 class="text-4xl md:text-5xl font-serif-premium text-stone-900 leading-tight">Grand Gateau de Chocolate Belga com Pistache</h1>
+                <p class="text-stone-600 leading-relaxed text-sm md:text-base">
+                    Uma experiência multissensorial: crosta crocante de chocolate belga, recheio fluido de ganache meio amargo e finalização manual com pistaches torrados em baixa temperatura.
+                </p>
+                
+                <!-- Ícones de Características Alimentares Modernos -->
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-100">
+                        🌱 Sem Glúten
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-800 border border-amber-100">
+                        🍫 Chocolate Belga Callebaut
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-800 border border-blue-100">
+                        🥛 Zero Lactose
+                    </span>
+                </div>
+            </div>
+
+            <!-- Bloco de Preço e Ações de Compra -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-100 shadow-sm space-y-6">
+                <div class="flex justify-between items-baseline">
+                    <span class="text-stone-500 text-sm">Preço unitário</span>
+                    <div class="text-right">
+                        <span class="text-3xl font-serif-premium text-stone-900">R$ 42,90</span>
+                    </div>
+                </div>
+
+                <!-- Seção Otimizada de Up-Selling e Cross-Selling ("Combine com") -->
+                <div class="border-t border-stone-100 pt-4 space-y-3">
+                    <h3 class="text-xs uppercase font-bold tracking-wider text-stone-500">✨ Combine com e viva a experiência completa:</h3>
+                    
+                    <!-- Item de Venda Casada 1 -->
+                    <label class="flex items-center justify-between p-3 rounded-xl border border-stone-200 hover:border-amber-700/40 cursor-pointer bg-stone-50/50 transition">
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-amber-700 focus:ring-amber-500 border-stone-300 rounded">
+                            <div class="text-sm">
+                                <p class="font-medium text-stone-800">Calda Extra de Caramelo Salgado (+50g)</p>
+                                <p class="text-xs text-stone-500">Artesanal e morna</p>
+                            </div>
+                        </div>
+                        <span class="text-sm font-semibold text-stone-900">+R$ 8,00</span>
+                    </label>
+
+                    <!-- Item de Venda Casada 2 -->
+                    <label class="flex items-center justify-between p-3 rounded-xl border border-stone-200 hover:border-amber-700/40 cursor-pointer bg-stone-50/50 transition">
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-amber-700 focus:ring-amber-500 border-stone-300 rounded">
+                            <div class="text-sm">
+                                <p class="font-medium text-stone-800">Embalagem Premium para Presente</p>
+                                <p class="text-xs text-stone-500">Caixa rígida com fita de cetim</p>
+                            </div>
+                        </div>
+                        <span class="text-sm font-semibold text-stone-900">+R$ 12,00</span>
+                    </label>
+                </div>
+
+                <!-- Botão de Compra de Alta Conversão -->
+                <button class="w-full bg-[#3d271d] hover:bg-[#2c1c15] text-white font-medium py-4 px-6 rounded-xl transition-colors shadow-md hover:shadow-lg flex items-center justify-center gap-2 tracking-wide">
+                    <span>Garantir Desejo Imediato</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+            </div>
+

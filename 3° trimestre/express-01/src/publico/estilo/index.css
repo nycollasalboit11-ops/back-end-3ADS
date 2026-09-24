@@ -1,0 +1,356 @@
+/* ==========================================================================
+   Configurações Globais e Variáveis de Estilo
+   ========================================================================== */
+:root {
+    --bg-main: #FFFDF9;          /* Creme quente sutil */
+    --text-primary: #2C221E;     /* Marrom chocolate escuro para alto contraste */
+    --text-secondary: #6B5B55;   /* Tom de apoio neutro */
+    --accent-orange: #FF7043;    /* Laranja vibrante para conversão e urgência */
+    --accent-amber: #FFA726;     /* Âmbar complementar */
+    --white: #FFFFFF;
+    
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+    
+    --radius-pill: 24px;         /* Cantos arredondados estilo pill-shape */
+    --radius-card: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   Navegação / Navbar
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(255, 253, 249, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(107, 91, 85, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+.logo a {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.logo a span {
+    color: var(--accent-orange);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent-orange);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-actions button {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.nav-actions button:hover {
+    color: var(--accent-orange);
+}
+
+.btn-urgent-nav {
+    text-decoration: none;
+    background-color: var(--text-primary);
+    color: var(--bg-main);
+    padding: 10px 22px;
+    border-radius: var(--radius-pill);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-urgent-nav:hover {
+    background-color: var(--accent-orange);
+    color: var(--white);
+}
+
+/* ==========================================================================
+   Hero Section (Limited Drops)
+   ========================================================================== */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 60px 8%;
+    gap: 60px;
+}
+
+.badge {
+    background-color: rgba(255, 112, 67, 0.1);
+    color: var(--accent-orange);
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    line-height: 1.15;
+    margin-bottom: 24px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 36px;
+}
+
+.btn-primary {
+    text-decoration: none;
+    background-color: var(--accent-orange);
+    color: var(--white);
+    padding: 16px 36px;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-block;
+    box-shadow: 0 4px 14px rgba(255, 112, 67, 0.3);
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 112, 67, 0.4);
+    background-color: #f45d2f;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 500px;
+    border-radius: var(--radius-card);
+    box-shadow: 0 20px 40px rgba(44, 34, 30, 0.08);
+}
+
+/* ==========================================================================
+   Social Proof / Depoimentos
+   ========================================================================== */
+.social-proof {
+    background-color: rgba(107, 91, 85, 0.03);
+    padding: 40px 8%;
+    text-align: center;
+    border-top: 1px solid rgba(107, 91, 85, 0.05);
+    border-bottom: 1px solid rgba(107, 91, 85, 0.05);
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.star-icon {
+    width: 18px;
+    height: 18px;
+    fill: var(--accent-amber);
+    color: var(--accent-amber);
+}
+
+.testimonial {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--text-primary);
+    max-width: 800px;
+    margin: 0 auto 12px auto;
+    line-height: 1.5;
+}
+
+.author {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Grid de Produtos (Mais Vendidos)
+   ========================================================================== */
+.products-grid-section {
+    padding: 80px 8%;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.product-card {
+    background-color: var(--white);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(44, 34, 30, 0.03);
+    border: 1px solid rgba(107, 91, 85, 0.05);
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(44, 34, 30, 0.08);
+}
+
+.product-image img {
+    width: 100%;
+    height: 280px;
+    transition: var(--transition);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.03);
+}
+
+.product-info {
+    padding: 24px;
+}
+
+.product-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    height: 44px; /* Garante alinhamento independente do tamanho do texto */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(107, 91, 85, 0.06);
+    padding-top: 18px;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.btn-card-action {
+    text-decoration: none;
+    background-color: rgba(44, 34, 30, 0.05);
+    color: var(--text-primary);
+    padding: 10px 24px;
+    border-radius: var(--radius-pill);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-card-action:hover {
+    background-color: var(--accent-orange);
+    color: var(--white);
+}
+
+/* ==========================================================================
+   Design Responsivo (Mobile-First Real)
+   ========================================================================== */
+@media (max-width: 968px) {
+    .navbar {
+        padding: 16px 5%;
+    }
+    .nav-links {
+        display: none; /* Em ambiente real, implementaria menu sanduíche */
+    }
+    .hero-section {
+        grid-template-columns: 1fr;
+        padding: 40px 5%;
+        gap: 30px;
+        text-align: center;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-image img {
+        height: 350px;
+    }
+    .products-grid-section {
+        padding: 60px 5%;
+    }
+}
