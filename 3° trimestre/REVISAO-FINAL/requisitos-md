@@ -1,0 +1,11 @@
+## básico:
+- variáveis (var, let, const)
+- estrutura de dados (array, objetos)
+- blocos ( funções, loops, condicionais)
+
+## intermediário:
+-nodejs (ambiente de execução) vs Javascript (limguagem)
+-módulos -> funções exportadas (local, nativo, terceiros)
+NPM ( site onde baixamos modelos)
+estáticos (html, css, js, imagens, videos, audio...)
+Express (framework ou "biblioteca backend")

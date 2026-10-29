@@ -1,12 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>produtos</title>
+    <title>Página de Produtos</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+        h3 { color: #333; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .produto-card { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .btn-voltar { display: inline-block; margin-top: 20px; color: #0066cc; text-decoration: none; }
+    </style>
 </head>
 <body>
-    <h3>pagina de produtos-.</h3>
-    <p>bem vindo(a) a home!</p>
+    <h3>Página de Produtos</h3>
+    <p>Bem-vindo(a) à nossa listagem de produtos do 3° Trimestre!</p>
+    
+    <div id="lista-produtos">
+        <!-- Os produtos do back-end vão aparecer aqui -->
+        <p>Carregando produtos...</p>
+    </div>
+
+    <a href="/" class="btn-voltar">← Voltar para a Home</a>
+
+    <script>
+        // Busca os produtos do back-end automaticamente ao carregar a página
+        fetch('/api/produtos')
+            .then(response => response.json())
+            .then(produtos => {
+                const container = document.getElementById('lista-produtos');
+                container.innerHTML = '';
+                
+                if(produtos.length === 0) {
+                    container.innerHTML = '<p>Nenhum produto cadastrado.</p>';
+                    return;
+                }
+
+                produtos.forEach(prod => {
+                    const card = document.createElement('div');
+                    card.className = 'produto-card';
+                    card.innerHTML = `<strong>${prod.nome}</strong> - R$ ${prod.preco.toFixed(2)}`;
+                    container.appendChild(card);
+                });
+            })
+            .catch(err => {
+                document.getElementById('lista-produtos').innerHTML = '<p>Erro ao carregar produtos.</p>';
+            });
+    </script>
 </body>
 </html>

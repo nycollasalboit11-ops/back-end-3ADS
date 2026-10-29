@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho Final - Produtos</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 40px; }
+        .box { max-width: 700px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h3 { color: #1a73e8; border-bottom: 2px solid #1a73e8; padding-bottom: 10px; margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #f1f3f4; color: #5f6368; }
+        .btn-voltar { display: inline-block; margin-top: 25px; color: #1a73e8; text-decoration: none; font-weight: bold; }
+        .btn-voltar:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>Página de Produtos - Trabalho Final</h3>
+        <p>Dados carregados de forma dinâmica do servidor Express:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome do Produto</th>
+                    <th>Categoria</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-corpo">
+                <tr>
+                    <td colspan="4">Buscando informações no banco de dados...</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="/" class="btn-voltar">← Voltar para a Home</a>
+    </div>
+
+    <script>
+        fetch('/api/produtos')
+            .then(res => res.json())
+            .then(produtos => {
+                const tbody = document.getElementById('tabela-corpo');
+                tbody.innerHTML = ''; 
+                
+                produtos.forEach(p => {
+                    const linha = document.createElement('tr');
+                    linha.innerHTML = `
+                        <td>${p.id}</td>
+                        <td><strong>${p.nome}</strong></td>
+                        <td>${p.categoria}</td>
+                        <td>R$ ${p.preco.toFixed(2)}</td>
+                    `;
+                    tbody.appendChild(linha);
+                });
+            })
+            .catch(err => {
+                document.getElementById('tabela-corpo').innerHTML = '<tr><td colspan="4" style="color: red;">Erro ao carregar dados.</td></tr>';
+            });
+    </script>
+</body>
+</html>
